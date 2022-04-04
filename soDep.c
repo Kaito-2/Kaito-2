@@ -13,6 +13,7 @@ void kiemTraSoDep(int number)
         a[n] = number%10;
         number/=10;
         n++;
+    }
 
     //Kiểm tra số chẵn
     int laSoChan = true;   
@@ -22,3 +23,46 @@ void kiemTraSoDep(int number)
         {
             laSoChan = false;
         }
+    }
+    //Kiểm tra số thuận nghịch
+    if(laSoChan == true)
+    {
+        int soThuanNghich = true;
+        for(int i = 0; i < n; i++)
+        {
+            if(a[i] != a[n-i-1])
+            {
+                soThuanNghich = false;
+            }
+        }
+        if(soThuanNghich == true)
+        {
+            printf("YES");
+        }
+        else
+        {
+            printf("NO");
+        }
+    }
+    else
+    {
+        printf("NO");
+    }
+}
+
+int main()
+{   
+    int t;
+    scanf("%d",&t);
+
+    while(t--)
+    {
+        int number;
+        scanf("%d",&number);
+        kiemTraSoDep(number);
+    }
+}
+ 
+
+
+
