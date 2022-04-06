@@ -62,7 +62,4 @@ int main()
         kiemTraSoDep(number);
     }
 }
- 
-
-
 
