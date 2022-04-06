@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+
+int WordCount(char str[], int length)
+{
+    int word = (str[0] != ' ');
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (str[i] == ' ' && str[i + 1] != ' ')
+        {
+            word++;
+        }
+    }
+    return word;
+}
+
+int main()
+{
+    int t;
+    scanf("%d",&t);
+
+    while(t--)
+    {
+        char str[100];
+        fflush(stdin);
+        gets(str);
+
+        int len = strlen(str);
+
+        printf("%d\n",WordCount(str,len));
+    }
+}
